@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme {
+  --color-pet-azul: #1bc0c6;
+  --color-pet-coral: #fe5f4e;
+  --color-pet-laranja: #fda821;
+  --color-pet-marinho: #134e6e;
+  --color-pet-verde: #25D366;
+  --font-sans: var(--font-baloo);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}; 
+
+@keyframes scroll-up {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes scroll-down {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
+.animate-scroll-up {
+  animation: scroll-up 12s linear infinite;
+}
+
+.animate-scroll-down {
+  animation: scroll-down 12s linear infinite;
+}
