@@ -84,7 +84,7 @@ export default function CrechePage() {
                 Reservar vaga 🐶
               </Link>
               <a
-                href="https://wa.me/5554990400030"
+                href="https://wa.me/5554999508873?text=Olá! Vim pelo site e gostaria de agendar um serviço para meu pet"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-emerald-500 text-white font-bold px-8 py-3 rounded-full text-lg border-2 border-pet-marinho shadow-[4px_4px_0px_0px_#134E6E] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all"
@@ -95,13 +95,13 @@ export default function CrechePage() {
           </motion.div>
 
           {/* Galeria */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start ">
             {/* Foto principal */}
             <motion.div
               initial={{ opacity: 0, x: -24 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative aspect-4/3 rounded-3xl overflow-hidden shadow-xl"
+              className="relative aspect-4/3 rounded-3xl overflow-hidden shadow-xl hover:scale-105 transition-all duration-300"
             >
               <Image
                 src={fotos[fotoAtiva].src}
@@ -197,7 +197,7 @@ export default function CrechePage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="relative aspect-square rounded-3xl overflow-hidden shadow-xl"
             >
-              <Image src="/creche5.jpg" alt="Pets felizes na creche" fill className="object-cover" />
+              <Image src="/creche5.jpg" alt="Pets felizes na creche" fill className="object-cover hover:scale-105 transition-all duration-300" />
               <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm rounded-2xl p-4">
                 <p className="font-extrabold text-pet-marinho">🐾 Livre de gaiolas</p>
                 <p className="text-sm text-zinc-500">Seu pet fica solto, feliz e livre para explorar</p>
@@ -255,7 +255,7 @@ export default function CrechePage() {
               Reservar vaga agora 🐶
             </Link>
             <a
-              href="https://wa.me/5554990400030"
+              href="https://wa.me/5554999508873?text=Olá! Vim pelo site e gostaria de agendar um serviço para meu pet"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-4 rounded-full text-lg border-2 border-white/20 transition-all"

@@ -77,7 +77,7 @@ export default function AdminPage() {
     <main className="min-h-screen bg-zinc-50 text-pet-marinho">
       {/* Header admin */}
       <header className="bg-white border-b border-zinc-100 px-6 md:px-12 py-4 flex items-center justify-between">
-        <Image src="/logo.png" alt="Logo Vida de Pets" width={120} height={40} />
+        <Image src="/logo-circular.png" alt="Logo Vida de Pets" width={120} height={40} />
         <button
           onClick={() => signOut({ callbackUrl: "/admin/login" })}
           className="text-sm font-semibold text-zinc-500 hover:text-pet-coral transition"

@@ -31,13 +31,13 @@ export default function LoginPage() {
 
   return (
     <main className="min-h-screen bg-white flex flex-col items-center justify-center px-6">
-      <Image src="/logo.png" alt="Logo Vida de Pets" width={160} height={50} className="mb-8" />
+      <Image src="/logo-circular.png" alt="Logo Vida de Pets" width={160} height={50} className="mb-8" />
 
-      <div className="w-full max-w-sm">
-        <h1 className="text-2xl font-extrabold text-pet-marinho mb-1">
+      <div className="w-full max-w-sm justify-center bg-white border border-zinc-200 rounded-2xl px-6 py-8 shadow-md">
+        <h1 className="text-2xl font-extrabold text-pet-marinho mb-1 text-center">
           Área administrativa
         </h1>
-        <p className="text-zinc-500 text-sm mb-8">
+        <p className="text-zinc-500 text-sm mb-8 text-center">
           Acesso restrito a administradores.
         </p>
 
