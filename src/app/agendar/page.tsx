@@ -63,10 +63,33 @@ export default function AgendarPage() {
   const hoje = new Date().toISOString().split("T")[0];
 
   function handleChange(
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+) {
+  const { name, value } = e.target;
+
+  if (name === "nome") {
+    // permite letras (com acento), espaços e apóstrofo/hífen (para nomes compostos)
+    const apenasLetras = value.replace(/[^A-Za-zÀ-ÿ\s'-]/g, "");
+    setForm((prev) => ({ ...prev, nome: apenasLetras }));
+    return;
   }
+
+  if (name === "telefone") {
+    // permite só números, e formata como (54) 99999-9999
+    const apenasNumeros = value.replace(/\D/g, "").slice(0, 11);
+    let formatado = apenasNumeros;
+    if (apenasNumeros.length > 2) {
+      formatado = `(${apenasNumeros.slice(0, 2)}) ${apenasNumeros.slice(2)}`;
+    }
+    if (apenasNumeros.length > 7) {
+      formatado = `(${apenasNumeros.slice(0, 2)}) ${apenasNumeros.slice(2, 7)}-${apenasNumeros.slice(7)}`;
+    }
+    setForm((prev) => ({ ...prev, telefone: formatado }));
+    return;
+  }
+
+  setForm((prev) => ({ ...prev, [name]: value }));
+}
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();

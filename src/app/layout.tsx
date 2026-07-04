@@ -14,10 +14,10 @@ export const metadata: Metadata = {
     "Atendimento veterinário, exames, estética animal, creche e hotel para o seu pet em Passo Fundo - RS.",
   icons: {
     icon: [
-      { url: "/logo-circular.png", type: "image/png" },
+      { url: "favicon.ico", type: "image/x-icon" },
     ],
-    shortcut: "/logo-circular.png",
-    apple: "/logo-circular.png",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
 };
 
