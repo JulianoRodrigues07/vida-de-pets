@@ -22,7 +22,7 @@ const fotos = [
   { src: "/creche3.jpeg", alt: "Pets brincando no gramado" },
   { src: "/creche4.jpg", alt: "Área coberta ampla" },
   { src: "/creche5.jpg", alt: "Pets socializando" },
-  { src: "/creche7.jpg", alt: "Pets na área coberta" },
+  { src: "/creche6.jpg", alt: "Cachorro tomando banho" },
 ];
 
 const diferenciais = [
