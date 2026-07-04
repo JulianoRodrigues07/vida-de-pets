@@ -5,10 +5,10 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const fotos = [
-  { src: "/foto2.jpeg", alt: "Área externa do Vida de Pets" },
-  { src: "/foto5.jpg", alt: "Fachada do Vida de Pets" },
-  { src: "/foto3.jpg", alt: "Espaço externo para os pets" },
-  { src: "/foto4.jpg", alt: "Recepção do Vida de Pets" },
+  { src: "/foto1Sobre.jpg", alt: "Fachada do Vida de Pets" },
+  { src: "/foto2Sobre.jpg", alt: "Recepção do Vida de Pets" },
+  { src: "/foto3Sobre.jpg", alt: "Espaço externo para os pets" },
+  { src: "/foto4Sobre.jpg", alt: "Área clínica" },
 ];
 
 export default function Galeria() {
