@@ -23,6 +23,9 @@ const fotos = [
   { src: "/creche4.jpg", alt: "Área coberta ampla" },
   { src: "/creche5.jpg", alt: "Pets socializando" },
   { src: "/creche6.jpg", alt: "Cachorro tomando banho" },
+  { src: "/creche7.jpeg", alt: "Área coberta ampla" },
+  { src: "/creche9.jpeg", alt: "Pets socializando" },
+  { src: "/creche10.jpeg", alt: "Cachorro tomando banho" },
 ];
 
 const diferenciais = [
@@ -35,7 +38,7 @@ const diferenciais = [
 ];
 
 const incluso = [
-  "Alimentação conforme rotina do pet",
+  "Monitoramento veterinario",
   "Creche para todos os portes",
   "Atividades e brincadeiras em grupo",
   "Espaço externo com grama e brinquedos",
@@ -101,7 +104,7 @@ export default function CrechePage() {
               initial={{ opacity: 0, x: -24 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative aspect-4/3 rounded-3xl overflow-hidden shadow-xl hover:scale-105 transition-all duration-300"
+              className="relative aspect-4/4 rounded-3xl overflow-hidden shadow-xl hover:scale-105 transition-all duration-300"
             >
               <Image
                 src={fotos[fotoAtiva].src}
@@ -139,12 +142,10 @@ export default function CrechePage() {
 
               {/* Horários */}
               <div className="bg-pet-marinho text-white rounded-2xl p-6">
-                <p className="font-extrabold text-lg mb-4">🕐 Horários de funcionamento</p>
+                <p className="font-extrabold text-lg mb-4">🕐 Horários de funcionamento da Creche</p>
                 <div className="flex flex-col gap-3">
                   {[
-                    { dia: "Segunda à Sexta", hora: "8h às 18h", destaque: false },
-                    { dia: "Sábado", hora: "8h às 13h", destaque: false },
-                    { dia: "Creche", hora: "7:30 às 19:00", destaque: true },
+                    { dia: "Creche", hora: "7:30 às 19:00 de Segunda a Sexta", destaque: false },
                     { dia: "Hotel (hospedagem)", hora: "24 horas", destaque: true },
                   ].map((h) => (
                     <div
@@ -197,7 +198,7 @@ export default function CrechePage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="relative aspect-square rounded-3xl overflow-hidden shadow-xl"
             >
-              <Image src="/creche5.jpg" alt="Pets felizes na creche" fill className="object-cover hover:scale-105 transition-all duration-300" />
+              <Image src={fotos[fotoAtiva].src} alt={fotos[fotoAtiva].alt} fill className="object-cover hover:scale-105 transition-all duration-300" />
               <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm rounded-2xl p-4">
                 <p className="font-extrabold text-pet-marinho">🐾 Livre de gaiolas</p>
                 <p className="text-sm text-zinc-500">Seu pet fica solto, feliz e livre para explorar</p>

@@ -89,7 +89,7 @@ export default function ContatoPage() {
                 </div>
                 <div className="flex justify-between py-1.5">
                   <span className="text-zinc-500">Sábado</span>
-                  <span className="font-semibold text-pet-marinho">8:00–12:00 / 13:30–15:00</span>
+                  <span className="font-semibold text-pet-marinho">8:00–12:00</span>
                 </div>
               </div>
 
@@ -112,10 +112,7 @@ export default function ContatoPage() {
                     <span className="text-zinc-500">Creche — Check-out</span>
                     <span className="font-semibold text-pet-marinho">19:00</span>
                   </div>
-                  <div className="flex justify-between py-1.5 border-b border-zinc-100">
-                    <span className="text-zinc-500">Sábado — Check-out</span>
-                    <span className="font-semibold text-pet-azul">17:00</span>
-                  </div>
+                  
                   <div className="flex justify-between py-1.5">
                     <span className="text-zinc-500">Hotel (Hospedagem)</span>
                     <span className="font-semibold text-pet-azul">24 Horas</span>

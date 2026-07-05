@@ -44,21 +44,22 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 py-0.5 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-40 py-3 transition-all duration-300 ${
           scrolled || menuAberto ? "bg-white shadow-md" : "bg-transparent"
-        }`}
-      >
-        <div className="flex items-center justify-between px-6 md:px-12 max-w-7xl mx-auto">
-          {/* Logo */}
-          <Link href="/" onClick={() => setMenuAberto(false)}>
-            <Image
-              src="/logo-circular.png"
-              alt="Logo Vida de Pets - Petshop"
-              width={100}
-              height={32}
-              priority
-            />
-          </Link>
+          }`}
+          >
+          <div className="flex items-center justify-between px-6 md:px-12 max-w-7xl mx-auto">
+            {/* Logo */}
+            <Link href="/" onClick={() => setMenuAberto(false)}>
+              <Image
+                src="/logo-principal.png"
+                alt="Logo Vida de Pets - Petshop"
+                width={240}
+                height={101}
+                priority
+                className="h-16 w-auto"
+              />
+            </Link>
 
           {/* Menu desktop */}
           <nav className="hidden md:flex gap-10 font-bold flex-1 justify-center ml-8">

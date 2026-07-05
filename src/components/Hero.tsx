@@ -111,7 +111,7 @@ export default function Hero() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="flex-1 text-center px-6 lg:px-0"
           >
-            <span className="inline-block bg-pet-azul/10 text-pet-azul font-bold px-4 py-1 rounded-full mb-6 -rotate-2">
+            <span className="inline-block bg-pet-azul/10 text-pet-azul font-bold px-4 py-1 rounded-full mb-6 ">
               🐾 Passo Fundo - Rio Grande do Sul
             </span>
 

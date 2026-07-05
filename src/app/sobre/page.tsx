@@ -74,7 +74,7 @@ export default function SobrePage() {
               </div>
               <div className="flex items-center gap-2 bg-zinc-50 border border-zinc-100 rounded-full px-4 py-2 text-sm font-semibold text-zinc-600">
                 <Award className="w-4 h-4 text-pet-azul" />
-                4.9 no Google
+                5.0 no Google
               </div>
             </div>
           </motion.div>
@@ -86,7 +86,7 @@ export default function SobrePage() {
             className="relative aspect-square rounded-3xl overflow-hidden shadow-xl"
           >
             <Image
-              src="/inauguracao.jpg"
+              src="/inauguracao2.jpeg"
               alt="Inauguração da Vida de Pets"
               fill
               className="object-cover hover:scale-105 transition-transform duration-500"
@@ -118,7 +118,7 @@ export default function SobrePage() {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-52 h-52 md:w-64 md:h-64 rounded-full bg-pet-marinho flex items-center justify-center shadow-xl">
                     <Image
-                      src="/pamela.png"
+                      src="/pamela.jpeg"
                       alt="Pâmela Rodrigues Ferroni — Médica Veterinária"
                       width={256}
                       height={256}
@@ -133,7 +133,7 @@ export default function SobrePage() {
                   className="absolute -bottom-2 -right-2 bg-white rounded-2xl shadow-lg px-4 py-2 border border-zinc-100"
                 >
                   <p className="text-xs font-bold text-pet-marinho">🩺 Médica Veterinária</p>
-                  <p className="text-xs text-zinc-400">CRMV-RS</p>
+                  <p className="text-xs text-zinc-400">CRMV-RS / 17977</p>
                 </motion.div>
               </div>
             </div>

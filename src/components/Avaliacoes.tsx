@@ -32,10 +32,10 @@ const avaliacoes = [
       "Lugar incrível para deixar seu pet. Ótimo atendimento, com todo carinho e atenção que seu pet merece. Olivia, Margot e Tom recomendam!",
   },
   {
-    nome: "Andressa Mendes",
+    nome: "Alessander Sirtoli",
     inicial: "A",
     cor: "bg-pet-azul",
-    texto: "Dra. Pamela cuida com muito amor todos os seus pacientes.",
+    texto: "Nossa Duna enloquece quando falamos a palavra creche e assim que chegamos lá ela sai em disparada para brincar com seus Aumigos! E a nossa pequena Stella consegue gastar tanta energia brincando que no fim do dia só quer saber de 😴 Nós ficamos tranquilos por que ali ambas estão extremamente seguras aos cuidados da Pamela! E gratos por todo carinho e atenção que elas recebem! Indicaria 1000x e mesmo assim seria pouco!",
   },
   {
     nome: "Júlia Hoffmann Batista",
@@ -76,7 +76,7 @@ export default function Avaliacoes() {
           {/* Badge nota geral */}
           <div className="flex items-center gap-4 bg-white rounded-2xl px-6 py-4 shadow-sm border border-zinc-100 w-fit">
             <div className="text-center">
-              <p className="text-4xl font-extrabold text-pet-marinho leading-none">4.9</p>
+              <p className="text-4xl font-extrabold text-pet-marinho leading-none">5.0</p>
               <Estrelas />
               <p className="text-xs text-zinc-400 mt-1">no Google</p>
             </div>
