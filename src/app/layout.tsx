@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       { url: "favicon.ico", type: "image/x-icon" },
     ],
     shortcut: "/logo-secundaria2.png",
-    apple: "/apple-touch-icon.png",
+    apple: "/logo-secundaria2.png",
   },
 };
 
