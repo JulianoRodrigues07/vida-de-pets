@@ -317,7 +317,7 @@ export default function ServicosPage() {
 
                 {/* Mini fotos */}
                 <div className="hidden md:grid grid-cols-2 gap-2 shrink-0">
-                  {["/creche1.jpg", "/creche3.jpg", "/creche5.jpg", "/creche2.jpg"].map(
+                  {["/creche1.jpg", "/creche4.jpg", "/creche5.jpg", "/creche2.jpg"].map(
                     (src, i) => (
                       <motion.div
                         key={i}

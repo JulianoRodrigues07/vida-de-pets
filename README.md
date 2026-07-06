@@ -67,6 +67,3 @@ Feito por **Juliano Rodrigues**
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/juliano-rodrigues-b988041a2/)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JulianoRodrigues07)
-# vida-de-pets
-# vida-de-pets
-# vida-de-pets

@@ -4,9 +4,11 @@ import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { Eye, EyeOff } from "lucide-react";
 
 export default function LoginPage() {
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
@@ -21,7 +23,7 @@ export default function LoginPage() {
       redirect: false,
     });
 
-    if (res?.ok) {
+    if (res && !res.error) {
       router.push("/admin");
     } else {
       setError(true);
@@ -31,7 +33,7 @@ export default function LoginPage() {
 
   return (
     <main className="min-h-screen bg-white flex flex-col items-center justify-center px-6">
-      <Image src="/logo-circular.png" alt="Logo Vida de Pets" width={160} height={50} className="mb-8" />
+      <Image src="/logo-principal.png" alt="Logo Vida de Pets" width={160} height={50} className="mb-8" />
 
       <div className="w-full max-w-sm justify-center bg-white border border-zinc-200 rounded-2xl px-6 py-8 shadow-md">
         <h1 className="text-2xl font-extrabold text-pet-marinho mb-1 text-center">
@@ -46,15 +48,25 @@ export default function LoginPage() {
             <label className="font-semibold text-sm text-pet-marinho" htmlFor="password">
               Senha
             </label>
-            <input
-              id="password"
-              type="password"
-              placeholder="Digite a senha"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className="border-2 border-zinc-200 focus:border-pet-azul outline-none rounded-xl px-4 py-3 transition"
-            />
+            <div className="relative">
+              <input
+                id="password"
+                type={showPassword ? "text" : "password"}
+                placeholder="Digite a senha"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="w-full border-2 border-zinc-200 focus:border-pet-azul outline-none rounded-xl px-4 py-3 pr-12 transition text-pet-marinho"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword((v) => !v)}
+                aria-label={showPassword ? "Ocultar senha" : "Mostrar senha"}
+                className="absolute inset-y-0 right-3 flex items-center text-zinc-500 hover:text-pet-marinho transition"
+              >
+                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+              </button>
+            </div>
           </div>
 
           {error && (
