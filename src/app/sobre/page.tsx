@@ -113,16 +113,16 @@ export default function SobrePage() {
             <div className="flex justify-center">
               <div className="relative">
                 {/* Círculo decorativo atrás */}
-                <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-linear-to-br from-pet-azul/20 to-pet-laranja/20" />
-                {/* Placeholder com iniciais */}
+                <div className="w-52 h-52 md:w-74 md:h-74 rounded-2xl bg-linear-to-br from-pet-azul/20 to-pet-laranja/20" />                {/* Placeholder com iniciais */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-52 h-52 md:w-64 md:h-64 rounded-full bg-pet-marinho flex items-center justify-center shadow-xl">
+                  <div className="w-52 h-52 md:w-64 md:h-64 rounded-2xl overflow-hidden shadow-xl border-4 border-white">
                     <Image
                       src="/pamela.jpeg"
-                      alt="Pâmela Rodrigues Ferroni — Médica Veterinária"
-                      width={256}
-                      height={256}
-                      className="object-cover object-top w-full h-full border-50% rounded-full"
+                      alt="Pâmela Ferroni Rodrigues — Médica Veterinária"
+                      width={400}
+                      height={400}
+                      quality={100}
+                      className="object-cover object-top w-full h-full"
                     />
                   </div>
                 </div>
