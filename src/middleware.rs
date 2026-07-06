@@ -1,15 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@/auth";
 
-export async function middleware(req: NextRequest) {
-  const session = await auth();
-  const isLoggedIn = !!session?.user?.email;
+export function middleware(req: NextRequest) {
   const isAdminRoute = req.nextUrl.pathname.startsWith("/admin");
   const isLoginPage = req.nextUrl.pathname === "/admin/login";
+  const token = req.cookies.get("admin_token");
 
-  if (isAdminRoute && !isLoginPage && !isLoggedIn) {
-    const loginUrl = new URL("/admin/login", req.nextUrl.origin);
-    return NextResponse.redirect(loginUrl);
+  if (isAdminRoute && !isLoginPage) {
+    const isLoggedIn = !!token?.value;
+
+    if (!isLoggedIn) {
+      console.log("REDIRECIONANDO PARA LOGIN");
+      return NextResponse.redirect(new URL("/admin/login", req.nextUrl.origin));
+    }
   }
 
   return NextResponse.next();

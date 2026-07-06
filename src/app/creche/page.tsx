@@ -18,14 +18,14 @@ import {
 
 const fotos = [
   { src: "/creche1.jpg", alt: "Área de recreação externa" },
-  { src: "/creche2.jpg", alt: "Área coberta com os pets" },
   { src: "/creche3.jpeg", alt: "Pets brincando no gramado" },
-  { src: "/creche4.jpg", alt: "Área coberta ampla" },
-  { src: "/creche5.jpg", alt: "Pets socializando" },
+  { src: "/creche13.jpeg", alt: "Pets brincando no gramado" },
   { src: "/creche6.jpg", alt: "Cachorro tomando banho" },
-  { src: "/creche7.jpeg", alt: "Área coberta ampla" },
-  { src: "/creche9.jpeg", alt: "Pets socializando" },
-  { src: "/creche10.jpeg", alt: "Cachorro tomando banho" },
+  { src: "/creche7.jpeg", alt: "Dois cachorros brincando" },
+  { src: "/creche12.jpeg", alt: "Cachorro tomando banho de sol" },
+  { src: "/creche11.jpeg", alt: "Cachorro comendo fruta" },
+  { src: "/creche4.jpg", alt: "Área coberta ampla" },
+  { src: "/creche9.jpeg", alt: "Pets na cama" },
 ];
 
 const diferenciais = [
@@ -38,12 +38,14 @@ const diferenciais = [
 ];
 
 const incluso = [
-  "Monitoramento veterinario",
+  "Monitoramento veterinário 24 horas",
   "Creche para todos os portes",
+  "Frutas, água fresca e petisco naturais de lanche",
   "Atividades e brincadeiras em grupo",
-  "Espaço externo com grama e brinquedos",
+  "Espaço com grama sintético, brinquedos e piscina",
+  "Área externa de mais de 500m² com sombra arborizada",
   "Área coberta para dias de chuva",
-  "Monitoramento constante da equipe",
+  "Monitoramento constante por câmeras",
   "Atualização via WhatsApp pra você",
 ];
 
@@ -84,7 +86,7 @@ export default function CrechePage() {
                 href="/agendar"
                 className="inline-flex items-center justify-center gap-2 bg-pet-laranja text-white font-bold px-8 py-3 rounded-full text-lg border-2 border-pet-marinho shadow-[4px_4px_0px_0px_#134E6E] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all"
               >
-                Reservar vaga 🐶
+                Reservar vaga 🐾
               </Link>
               <a
                 href="https://wa.me/5554999508873?text=Olá! Vim pelo site e gostaria de agendar um serviço para meu pet"
@@ -112,9 +114,6 @@ export default function CrechePage() {
                 fill
                 className="object-cover transition-all duration-500"
               />
-              <div className="absolute bottom-4 left-4 bg-black/40 backdrop-blur-sm text-white text-sm font-semibold px-3 py-1.5 rounded-full">
-                {fotos[fotoAtiva].alt}
-              </div>
             </motion.div>
 
             {/* Miniaturas + horários */}
@@ -198,11 +197,12 @@ export default function CrechePage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="relative aspect-square rounded-3xl overflow-hidden shadow-xl"
             >
-              <Image src={fotos[fotoAtiva].src} alt={fotos[fotoAtiva].alt} fill className="object-cover hover:scale-105 transition-all duration-300" />
-              <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm rounded-2xl p-4">
-                <p className="font-extrabold text-pet-marinho">🐾 Livre de gaiolas</p>
-                <p className="text-sm text-zinc-500">Seu pet fica solto, feliz e livre para explorar</p>
-              </div>
+            <Image
+                src="/beagle.jpg"
+                alt="Beagle brincando solto no pátio"
+                fill
+                className="object-cover object-bottom hover:scale-105 transition-all duration-300"
+              />
             </motion.div>
           </div>
         </div>
@@ -215,7 +215,7 @@ export default function CrechePage() {
             Por que escolher a <span className="text-pet-laranja">Vida de Pets?</span>
           </h2>
           <p className="text-zinc-500 text-center max-w-xl mx-auto mb-12">
-            Nosso espaço foi pensado do zero para oferecer o melhor para o seu pet.
+            Nosso espaço foi pensado para oferecer o melhor para o seu pet.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">

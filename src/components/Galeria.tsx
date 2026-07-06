@@ -5,10 +5,10 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const fotos = [
-  { src: "/foto1Sobre.jpg", alt: "Fachada do Vida de Pets" },
+  { src: "/inauguracao2.jpeg", alt: "Fachada do petshop" },
   { src: "/foto2Sobre.jpg", alt: "Recepção do Vida de Pets" },
   { src: "/foto3Sobre.jpg", alt: "Espaço externo para os pets" },
-  { src: "/foto4Sobre.jpg", alt: "Área clínica" },
+  { src: "/clinica.jpeg", alt: "Área clínica" },
 ];
 
 export default function Galeria() {
@@ -43,15 +43,15 @@ export default function Galeria() {
             {fotos.map((foto) => (
             <div
               key={foto.src}
-              className="relative flex-none w-[90%] md:w-[80%] aspect-video rounded-2xl overflow-hidden ml-4"
+              className="relative flex-none w-[90%] md:w-[60%] aspect-square rounded-2xl overflow-hidden ml-4"
             >
-                <Image
-                  src={foto.src}
-                  alt={foto.alt}
-                  fill
-                  className="object-cover"
-                />
-              </div>
+              <Image
+                src={foto.src}
+                alt={foto.alt}
+                fill
+                className="object-cover"
+              />
+            </div>
             ))}
           </div>
         </div>

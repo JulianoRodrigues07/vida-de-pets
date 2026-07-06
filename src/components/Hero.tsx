@@ -5,20 +5,20 @@ import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import Image from "next/image";
 
 const fotosEsquerda = [
-  { src: "/pet1.png", alt: "Gatinho siamês" },
-  { src: "/pet2.png", alt: "Golden Retriever" },
   { src: "/pet3.png", alt: "Border Collie" },
-  { src: "/pet1.png", alt: "Gatinho siamês" },
-  { src: "/pet2.png", alt: "Golden Retriever" },
+  { src: "/pet4.png", alt: "Poodle branco" },
+  { src: "/pet5.png", alt: "Spitz Alemão natalino" },
   { src: "/pet3.png", alt: "Border Collie" },
+  { src: "/pet4.png", alt: "Poodle branco" },
+  { src: "/pet5.png", alt: "Spitz Alemão natalino" },
 ];
 
 const fotosDireita = [
-  { src: "/pet4.png", alt: "Poodle branco" },
-  { src: "/pet5.png", alt: "Spitz Alemão natalino" },
+  { src: "/pet1.png", alt: "Gatinho siamês" },
+  { src: "/pet2.png", alt: "Golden Retriever" },
   { src: "/pet6.png", alt: "Spitz Alemão no brinquedo" },
-  { src: "/pet4.png", alt: "Poodle branco" },
-  { src: "/pet5.png", alt: "Spitz Alemão natalino" },
+  { src: "/pet1.png", alt: "Gatinho siamês" },
+  { src: "/pet2.png", alt: "Golden Retriever" },
   { src: "/pet6.png", alt: "Spitz Alemão no brinquedo" },
 ];
 
@@ -117,7 +117,7 @@ export default function Hero() {
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-pet-marinho">
               Cuidado de verdade{" "}
-              <span className="text-pet-coral inline-block -rotate-1">
+              <span className="text-pet-coral inline-block">
                 pra quem você ama
               </span>
             </h1>

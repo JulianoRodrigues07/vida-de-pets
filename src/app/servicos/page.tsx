@@ -46,36 +46,37 @@ export default function ServicosPage() {
           {/* Bento Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 
-            {/* Card grande — Veterinário */}
+            {/* Card grande — Estética */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{
+              y: -8,
+              scale: 1.02,
+              transition: {
+                duration: 0.2,
+                ease: "easeOut",
+              },
+            }}
+            whileTap={{ scale: 0.99 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.2 }}
+            className="md:col-span-2 bg-pet-azul rounded-3xl p-8 text-white relative overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer"
+          >
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{
-                y: -8,
-                scale: 1.02,
-                transition: {
-                  duration: 0.2,
-                  ease: "easeOut",
-                },
-              }}
-              whileTap={{ scale: 0.99 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.2 }}
-              className="md:col-span-2 bg-pet-azul rounded-3xl p-8 text-white relative overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer"
-            >
-              <motion.div
-                className="absolute -bottom-8 -right-8 w-40 h-40 bg-white/10 rounded-full pointer-events-none"
-                whileHover={{ scale: 1.25, opacity: 0.2 }}
-                transition={{ duration: 0.3 }}
-              />
+              className="absolute -bottom-8 -right-8 w-40 h-40 bg-white/10 rounded-full pointer-events-none"
+              whileHover={{ scale: 1.25, opacity: 0.2 }}
+              transition={{ duration: 0.3 }}
+            />
 
-              <motion.div
-                className="absolute -bottom-4 -right-4 w-24 h-24 bg-white/10 rounded-full pointer-events-none"
-                whileHover={{ scale: 1.35, opacity: 0.25 }}
-                transition={{ duration: 0.35 }}
-              />
+            <motion.div
+              className="absolute -bottom-4 -right-4 w-24 h-24 bg-white/10 rounded-full pointer-events-none"
+              whileHover={{ scale: 1.35, opacity: 0.25 }}
+              transition={{ duration: 0.35 }}
+            />
 
-              <div className="relative z-10">
+            <div className="relative z-10 flex flex-col md:flex-row gap-6 items-start">
+              <div className="flex-1">
                 <motion.div
                   className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mb-6"
                   whileHover={{
@@ -84,23 +85,26 @@ export default function ServicosPage() {
                   }}
                   transition={{ duration: 0.2 }}
                 >
-                  <Stethoscope className="w-7 h-7 text-white" strokeWidth={1.5} />
+                  <Sparkles className="w-7 h-7 text-white" strokeWidth={1.5} />
                 </motion.div>
 
                 <h2 className="text-2xl font-extrabold mb-2">
-                  Atendimento Veterinário
+                  Estética Animal
                 </h2>
 
-                <p className="text-white/70 mb-5 max-w-sm">
-                  Consultas clínicas com profissionais capacitados para cuidar da saúde do seu pet.
+                <p className="text-white mb-5 max-w-sm">
+                  Banho, tosa e cuidados especiais para deixar seu pet cheiroso e bonito.
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {[
-                    "Consultas gerais",
-                    "Diagnóstico",
-                    "Medicamentos",
-                    "Nutrição",
+                    "Banho Geral e Terapêutico",
+                    "Hidratação da Pelagem",
+                    "Tosa Geral e Higiênica",
+                    "Desembolo",
+                    "Remoção de sub pelos",
+                    "Escovação dentária",
+                    "Limpeza de ouvido",
                   ].map((tag, index) => (
                     <motion.span
                       key={tag}
@@ -112,14 +116,39 @@ export default function ServicosPage() {
                         duration: 0.15,
                         delay: index * 0.03,
                       }}
-                      className="bg-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full"
+                      className="bg-white/30 text-white text-xs font-semibold px-3 py-1 rounded-full"
                     >
                       {tag}
                     </motion.span>
                   ))}
                 </div>
               </div>
-            </motion.div>
+
+              {/* Mini fotos */}
+              <div className="hidden md:grid grid-cols-2 gap-2 shrink-0">
+                {["/estetica1.jpg", "/estetica2.jpg", "/estetica3.jpg", "/estetica4.jpg"].map(
+                  (src, i) => (
+                    <motion.div
+                      key={i}
+                      whileHover={{
+                        scale: 1.08,
+                        rotate: 2,
+                      }}
+                      transition={{ duration: 0.2 }}
+                      className="relative w-24 h-24 rounded-xl overflow-hidden"
+                    >
+                      <Image
+                        src={src}
+                        alt="Estética Animal"
+                        fill
+                        className="object-cover"
+                      />
+                    </motion.div>
+                  )
+                )}
+              </div>
+            </div>
+          </motion.div>
 
             {/* Card pequeno — Exames e Vacinas */}
            <motion.div
@@ -161,77 +190,79 @@ export default function ServicosPage() {
               </h2>
 
               <p className="text-white/70 text-sm">
-                Calendário completo de vacinas e exames preventivos para seu pet sempre protegido.
+                Protocolo completo de vacinas, exames laboratoriais, ultrassonografia e raio-x para seu pet sempre protegido.
               </p>
             </div>
           </motion.div>
 
-            {/* Card pequeno — Estética */}
-           <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+           {/* Card pequeno — Veterinário */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{
+              y: -8,
+              scale: 1.03,
+              transition: {
+                duration: 0.2,
+                ease: "easeOut",
+              },
+            }}
+            whileTap={{ scale: 0.98 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.2 }}
+            className="bg-pet-laranja rounded-3xl p-7 text-white relative overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer"
+          >
+            <motion.div
+              className="absolute -bottom-6 -right-6 w-32 h-32 bg-white/10 rounded-full pointer-events-none"
               whileHover={{
-                y: -8,
-                scale: 1.03,
-                transition: {
-                  duration: 0.2,
-                  ease: "easeOut",
-                },
+                scale: 1.3,
+                opacity: 0.2,
               }}
-              whileTap={{ scale: 0.98 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.2 }}
-              className="bg-pet-laranja rounded-3xl p-7 text-white relative overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer"
-            >
+              transition={{ duration: 0.3 }}
+            />
+
+            <div className="relative z-10">
               <motion.div
-                className="absolute -bottom-6 -right-6 w-32 h-32 bg-white/10 rounded-full pointer-events-none"
-                whileHover={{
-                  scale: 1.3,
-                  opacity: 0.2,
-                }}
-                transition={{ duration: 0.3 }}
-              />
+                className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mb-5"
+                whileHover={{ rotate: 8, scale: 1.1 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Stethoscope className="w-6 h-6 text-white" strokeWidth={1.5} />
+              </motion.div>
 
-              <div className="relative z-10">
-                <motion.div
-                  className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mb-5"
-                  whileHover={{ rotate: 8, scale: 1.1 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Sparkles className="w-6 h-6 text-white" strokeWidth={1.5} />
-                </motion.div>
+              <h2 className="text-xl font-extrabold mb-2">
+                Atendimento Veterinário
+              </h2>
 
-                <h2 className="text-xl font-extrabold mb-2">
-                  Estética Animal
-                </h2>
+              <p className="text-white/70 text-sm mb-4">
+                Cuidado completo para a saúde do seu pet, em todas as fases da vida.
+              </p>
 
-                <p className="text-white/70 text-sm mb-4">
-                  Banho, tosa e cuidados especiais para deixar seu pet cheiroso e bonito.
-                </p>
-
-                <div className="flex flex-col gap-1.5">
-                  {[
-                    "Banho Geral e Terapêutico",
-                    "Hidratação da Pelagem",
-                    "Tosa Geral e Higiênica",
-                    "Desembolo",
-                    "Remoção de sub pelos",
-                    "Escovação dentária",
-                    "Limpeza de ouvido",
-                  ].map((item, index) => (
-                    <motion.div
-                      key={item}
-                      className="flex items-center gap-2 text-white/90 text-sm"
-                      whileHover={{ x: 5 }}
-                      transition={{ duration: 0.15, delay: index * 0.02 }}
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0" />
-                      {item}
-                    </motion.div>
-                  ))}
-                </div>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Consultas gerais",
+                  "Diagnóstico",
+                  "Medicamentos",
+                  "Nutrição",
+                ].map((tag, index) => (
+                  <motion.span
+                    key={tag}
+                    whileHover={{
+                      scale: 1.08,
+                      y: -2,
+                    }}
+                    transition={{
+                      duration: 0.15,
+                      delay: index * 0.03,
+                    }}
+                    className="bg-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full"
+                  >
+                    {tag}
+                  </motion.span>
+                ))}
               </div>
-            </motion.div>
+            </div>
+          </motion.div>
 
             {/* Card grande — Creche e Hotel */}
             <motion.div
