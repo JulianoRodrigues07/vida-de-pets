@@ -5,7 +5,7 @@ import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-pet-marinho text-white mt-20">
+    <footer className="bg-pet-marinho text-white">
       <div className="px-6 md:px-12 py-12 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
         
         {/* Coluna 1 - Marca */}

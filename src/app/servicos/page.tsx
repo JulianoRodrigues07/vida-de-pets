@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight,
+  ChevronDown,
   Home as HomeIcon,
   Sparkles,
   Stethoscope,
@@ -16,9 +17,99 @@ import Footer from "@/components/Footer";
 
 
 
+const perguntasFrequentes = [
+  {
+    pergunta: "Preciso agendar com antecedência?",
+    resposta:
+      "Recomendamos agendar com pelo menos 1 dia de antecedência para garantir o melhor horário, mas em caso de urgência entre em contato pelo WhatsApp que fazemos o possível para encaixar.",
+  },
+  {
+    pergunta: "Quais formas de pagamento vocês aceitam?",
+    resposta:
+      "Aceitamos Pix, cartão de débito, cartão de crédito e dinheiro. O pagamento é feito na retirada do seu pet.",
+  },
+  {
+    pergunta: "Posso cancelar ou remarcar meu agendamento?",
+    resposta:
+      "Sim! Basta entrar em contato pelo WhatsApp com pelo menos 2 horas de antecedência para remarcar sem nenhum custo.",
+  },
+  {
+    pergunta: "Meu pet precisa estar com as vacinas em dia?",
+    resposta:
+      "Sim, para serviços de creche e hotel exigimos carteira de vacinação atualizada. Para banho e tosa, recomendamos, mas não é obrigatório.",
+  },
+  {
+    pergunta: "Vocês atendem pets de todos os portes?",
+    resposta:
+      "Atendemos cães e gatos de pequeno, médio e grande porte. Alguns serviços podem ter valores diferentes de acordo com o porte do animal.",
+  },
+];
+
+function FaqItem({
+  pergunta,
+  resposta,
+  aberta,
+  onToggle,
+}: {
+  pergunta: string;
+  resposta: string;
+  aberta: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <div className="border-b border-zinc-200 last:border-b-0">
+      <button
+        onClick={onToggle}
+        className="w-full flex items-center justify-between gap-4 py-5 text-left"
+      >
+        <span className="font-bold text-pet-marinho">{pergunta}</span>
+        <motion.span
+          animate={{ rotate: aberta ? 180 : 0 }}
+          transition={{ duration: 0.2 }}
+          className="shrink-0 text-pet-marinho/60"
+        >
+          <ChevronDown className="w-5 h-5" />
+        </motion.span>
+      </button>
+
+      <AnimatePresence initial={false}>
+        {aberta && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <p className="text-zinc-500 pb-5 pr-8">{resposta}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
 export default function ServicosPage() {
   const [] = useState<string | null>("Atendimento Veterinário");
-  const [] = useState(0);
+
+  const fotosEstetica = [
+    "/estetica1.jpg",
+    "/estetica2.jpg",
+    "/estetica3.jpg",
+    "/estetica4.jpg",
+    // adicione aqui as fotos pós-banho, ex: "/pos-banho-1.jpg",
+  ];
+
+  const [fotoAtual, setFotoAtual] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFotoAtual((prev) => (prev + 1) % fotosEstetica.length);
+    }, 2500); // troca a cada 2.5s
+    return () => clearInterval(interval);
+  }, [fotosEstetica.length]);
+
+  const [perguntaAberta, setPerguntaAberta] = useState<number | null>(0);
 
   return (
     <main className="min-h-screen bg-white text-pet-marinho overflow-hidden pt-20 relative">
@@ -75,7 +166,7 @@ export default function ServicosPage() {
               transition={{ duration: 0.35 }}
             />
 
-            <div className="relative z-10 flex flex-col md:flex-row gap-6 items-start">
+            <div className="relative z-10 flex flex-col md:flex-row gap-6 items-center">
               <div className="flex-1">
                 <motion.div
                   className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mb-6"
@@ -124,28 +215,37 @@ export default function ServicosPage() {
                 </div>
               </div>
 
-              {/* Mini fotos */}
-              <div className="hidden md:grid grid-cols-2 gap-2 shrink-0">
-                {["/estetica1.jpg", "/estetica2.jpg", "/estetica3.jpg", "/estetica4.jpg"].map(
-                  (src, i) => (
-                    <motion.div
+              {/* Carrossel de fotos vertical, trocando automaticamente */}
+              <div className="hidden md:block relative w-full md:w-[38%] max-w-[220px] aspect-[3/4] shrink-0 mr-4 rounded-2xl overflow-hidden shadow-lg bg-white/10">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={fotoAtual}
+                    initial={{ opacity: 0, scale: 1.03 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.98 }}
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src={fotosEstetica[fotoAtual]}
+                      alt="Pet após banho na Vida de Pets"
+                      fill
+                      className="object-cover"
+                    />
+                  </motion.div>
+                </AnimatePresence>
+
+                {/* Indicador de posição */}
+                <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 z-10">
+                  {fotosEstetica.map((_, i) => (
+                    <span
                       key={i}
-                      whileHover={{
-                        scale: 1.08,
-                        rotate: 2,
-                      }}
-                      transition={{ duration: 0.2 }}
-                      className="relative w-24 h-24 rounded-xl overflow-hidden"
-                    >
-                      <Image
-                        src={src}
-                        alt="Estética Animal"
-                        fill
-                        className="object-cover"
-                      />
-                    </motion.div>
-                  )
-                )}
+                      className={`h-1.5 rounded-full transition-all duration-300 ${
+                        i === fotoAtual ? "w-4 bg-white" : "w-1.5 bg-white/40"
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>
@@ -385,6 +485,41 @@ export default function ServicosPage() {
           </div>
         </div>
       </section>
+
+      {/* Perguntas Frequentes */}
+      <section className="bg-zinc-50 px-6 md:px-12 py-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.3 }}
+          className="max-w-2xl mx-auto"
+        >
+          <div className="text-center mb-8">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-pet-marinho/60">
+              Dúvidas
+            </p>
+            <h2 className="text-3xl md:text-4xl font-extrabold mt-3">
+              Perguntas <span className="text-pet-coral">Frequentes</span>
+            </h2>
+          </div>
+
+          <div className="bg-white rounded-3xl shadow-lg px-6 md:px-8">
+            {perguntasFrequentes.map((item, index) => (
+              <FaqItem
+                key={item.pergunta}
+                pergunta={item.pergunta}
+                resposta={item.resposta}
+                aberta={perguntaAberta === index}
+                onToggle={() =>
+                  setPerguntaAberta(perguntaAberta === index ? null : index)
+                }
+              />
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
       <Footer />
     </main>
   );

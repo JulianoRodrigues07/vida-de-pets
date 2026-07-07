@@ -79,7 +79,10 @@ export default function AdminPage() {
       <header className="bg-white border-b border-zinc-100 px-6 md:px-12 py-4 flex items-center justify-between">
         <Image src="/logo-principal.png" alt="Logo Vida de Pets" width={120} height={40} />
         <button
-          onClick={() => signOut({ callbackUrl: "/admin/login" })}
+          onClick={async () => {
+            await fetch("/api/auth/nextauth", { method: "DELETE" });
+            window.location.href = "/admin/login";
+          }}
           className="text-sm font-semibold text-zinc-500 hover:text-pet-coral transition"
         >
           Sair

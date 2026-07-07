@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Eye, EyeOff } from "lucide-react";
@@ -18,13 +17,15 @@ export default function LoginPage() {
     setLoading(true);
     setError(false);
 
-    const res = await signIn("credentials", {
-      password,
-      redirect: false,
+    const res = await fetch("/api/auth/nextauth", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password }),
     });
 
-    if (res && !res.error) {
+    if (res.ok) {
       router.push("/admin");
+      router.refresh();
     } else {
       setError(true);
       setLoading(false);
