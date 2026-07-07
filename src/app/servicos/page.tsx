@@ -94,7 +94,7 @@ export default function ServicosPage() {
 
   const fotosEstetica = [
     "/estetica1.jpg",
-    "/estetica2.jpg",
+    "/estetica2aa.jpg",
     "/estetica3.jpg",
     "/estetica4.jpg",
     // adicione aqui as fotos pós-banho, ex: "/pos-banho-1.jpg",
