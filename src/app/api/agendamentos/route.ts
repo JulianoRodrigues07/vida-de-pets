@@ -19,9 +19,9 @@ export async function GET() {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { nome, telefone, servico, data, horario } = body;
+    const { nome, telefone, nomePet, servico, data, horario } = body;
 
-    if (!nome || !telefone || !servico || !data || !horario) {
+    if (!nome || !telefone || !nomePet || !servico || !data || !horario) {
       return NextResponse.json(
         { error: "Todos os campos são obrigatórios." },
         { status: 400 }
@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
     }
 
     const agendamento = await prisma.agendamento.create({
-      data: { nome, telefone, servico, data, horario },
+      data: { nome, telefone, nomePet, servico, data, horario },
     });
 
     return NextResponse.json(agendamento, { status: 201 });

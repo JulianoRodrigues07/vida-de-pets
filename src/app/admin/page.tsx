@@ -9,6 +9,7 @@ type Agendamento = {
   id: number;
   nome: string;
   telefone: string;
+  nomePet: string;
   servico: string;
   data: string;
   horario: string;
@@ -24,7 +25,7 @@ const statusConfig = {
 
 function gerarMensagemConfirmacao(ag: Agendamento) {
   return encodeURIComponent(
-    `Olá ${ag.nome}! 🐾 Seu agendamento na *Vida de Pets* foi *confirmado*!\n\n` +
+    `Olá ${ag.nome}! 🐾 O agendamento do ${ag.nomePet} na *Vida de Pets* foi *confirmado*!\n\n` +
     `📋 Serviço: ${ag.servico}\n` +
     `📅 Data: ${ag.data}\n` +
     `🕐 Horário: ${ag.horario}\n\n` +
@@ -34,7 +35,7 @@ function gerarMensagemConfirmacao(ag: Agendamento) {
 
 function gerarMensagemReagendamento(ag: Agendamento) {
   return encodeURIComponent(
-    `Olá ${ag.nome}! 🐾 Precisamos reagendar seu atendimento na *Vida de Pets*.\n\n` +
+    `Olá ${ag.nome}! 🐾 Precisamos reagendar o atendimento do ${ag.nomePet} na *Vida de Pets*.\n\n` +
     `📋 Serviço: ${ag.servico}\n` +
     `📅 Data solicitada: ${ag.data}\n` +
     `🕐 Horário solicitado: ${ag.horario}\n\n` +
@@ -123,10 +124,10 @@ export default function AdminPage() {
 
                   <div className="flex flex-col gap-1 text-sm text-zinc-600 border-t border-zinc-100 pt-3">
                     <p>📋 <strong>Serviço:</strong> {ag.servico}</p>
+                    <p>🐾 <strong>Pet:</strong> {ag.nomePet}</p>
                     <p>📅 <strong>Data:</strong> {ag.data}</p>
                     <p>🕐 <strong>Horário:</strong> {ag.horario}</p>
                   </div>
-
                   {/* Ações */}
                   <div className="flex flex-wrap gap-2 border-t border-zinc-100 pt-3">
                     {/* Confirmar no sistema */}

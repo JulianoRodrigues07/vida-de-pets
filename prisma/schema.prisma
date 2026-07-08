@@ -11,6 +11,7 @@ model Agendamento {
   id        Int      @id @default(autoincrement())
   nome      String
   telefone  String
+  nomePet   String
   servico   String
   data      String
   horario   String

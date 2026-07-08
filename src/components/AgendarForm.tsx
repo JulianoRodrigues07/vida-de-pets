@@ -18,9 +18,10 @@ const horarios = [
 type Status = "idle" | "loading" | "success" | "error";
 
 export default function AgendarForm() {
-  const [form, setForm] = useState({
+    const [form, setForm] = useState({
     nome: "",
     telefone: "",
+    nomePet: "",
     servico: "",
     data: "",
     horario: "",
@@ -101,7 +102,7 @@ export default function AgendarForm() {
 
       if (!res.ok) throw new Error();
       setStatus("success");
-      setForm({ nome: "", telefone: "", servico: "", data: "", horario: "" });
+      setForm({ nome: "", telefone: "", nomePet: "", servico: "", data: "", horario: "" });
       setHorariosOcupados([]);
     } catch {
       setStatus("error");
@@ -164,6 +165,22 @@ export default function AgendarForm() {
               inputMode="numeric"
               placeholder="(54) 99999-9999"
               value={form.telefone}
+              onChange={handleChange}
+              required
+              className="border-2 border-zinc-200 focus:border-pet-azul outline-none rounded-xl px-4 py-3 transition"
+            />
+          </div>
+          {/* Nome do Pet */}
+          <div className="flex flex-col gap-1">
+            <label className="font-semibold text-sm" htmlFor="nomePet">
+              Nome do pet
+            </label>
+            <input
+              id="nomePet"
+              name="nomePet"
+              type="text"
+              placeholder="Ex: Thor, Luna, Mel..."
+              value={form.nomePet}
               onChange={handleChange}
               required
               className="border-2 border-zinc-200 focus:border-pet-azul outline-none rounded-xl px-4 py-3 transition"
