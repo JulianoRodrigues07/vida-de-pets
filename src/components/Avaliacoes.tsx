@@ -106,11 +106,12 @@ export default function Avaliacoes() {
             >
               {/* Barra gradiente Google no topo */}
               <div
-                className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"
                 style={{
                   backgroundImage: "linear-gradient(to right, #4285F4, #EA4335, #FBBC05, #34A853)"
                 }}
               />
+
               {/* Topo */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">

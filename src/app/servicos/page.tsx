@@ -9,6 +9,7 @@ import {
   ArrowRight,
   ChevronDown,
   Home as HomeIcon,
+  HouseHeart,
   Sparkles,
   Stethoscope,
   Syringe,
@@ -94,10 +95,9 @@ export default function ServicosPage() {
 
   const fotosEstetica = [
     "/estetica1.jpg",
-    "/estetica2aa.jpg",
-    "/estetica3.jpg",
-    "/estetica4.jpg",
-    // adicione aqui as fotos pós-banho, ex: "/pos-banho-1.jpg",
+    "/esteticav2.jpg",
+    "/esteticav3.jpg",
+    "/pet5.png",
   ];
 
   const [fotoAtual, setFotoAtual] = useState(0);
@@ -216,7 +216,7 @@ export default function ServicosPage() {
               </div>
 
               {/* Carrossel de fotos vertical, trocando automaticamente */}
-              <div className="hidden md:block relative w-full md:w-[38%] max-w-[220px] aspect-[3/4] shrink-0 mr-4 rounded-2xl overflow-hidden shadow-lg bg-white/10">
+              <div className="hidden md:block relative w-full md:w-[38%] max-w-55 aspect-3/4 shrink-0 mr-4 rounded-2xl overflow-hidden shadow-lg bg-white/10">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={fotoAtual}
@@ -340,10 +340,10 @@ export default function ServicosPage() {
 
               <div className="flex flex-wrap gap-2">
                 {[
-                  "Consultas gerais",
-                  "Diagnóstico",
+                  "Consulta clínica",
+                  "Consulta oncológica",
+                  "Acessórios",
                   "Medicamentos",
-                  "Nutrição",
                 ].map((tag, index) => (
                   <motion.span
                     key={tag}
@@ -399,7 +399,7 @@ export default function ServicosPage() {
                     whileHover={{ rotate: 8, scale: 1.1 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <HomeIcon className="w-7 h-7 text-white" strokeWidth={1.5} />
+                  <HouseHeart className="w-7 h-7 text-white" strokeWidth={1.5}/>
                   </motion.div>
 
                   <h2 className="text-2xl font-extrabold mb-2">
@@ -448,7 +448,7 @@ export default function ServicosPage() {
 
                 {/* Mini fotos */}
                 <div className="hidden md:grid grid-cols-2 gap-2 shrink-0">
-                  {["/creche1.jpg", "/creche4.jpg", "/creche5.jpg", "/creche2.jpg"].map(
+                  {["/creche1.jpg", "/creche3.jpeg", "/creche6.jpg", "/creche11.jpeg"].map(
                     (src, i) => (
                       <motion.div
                         key={i}

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import Image from "next/image";
+import { PawPrint } from "lucide-react";
 
 const fotosEsquerda = [
   { src: "/pet3.png", alt: "Border Collie" },
@@ -130,9 +131,12 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center">
               <a
                 href="/agendar"
-                className="inline-block bg-pet-laranja text-white font-bold px-8 py-3 rounded-full text-lg border-2 border-pet-marinho shadow-[4px_4px_0px_0px_#134E6E] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all text-center"
+                className="group relative inline-flex items-center justify-center gap-2 bg-pet-laranja text-white font-bold px-8 py-3 rounded-full text-lg border-2 border-pet-marinho shadow-[4px_4px_0px_0px_#134E6E] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all text-center"
               >
-                Agendar horário 🐶
+                Agendar horário
+                <span className="inline-flex group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300 ease-out">
+                  <PawPrint className="w-5 h-5" strokeWidth={2.2} />
+                </span>
               </a>
               <a
                 href="https://wa.me/5554999508873?text=Olá! Vim pelo site e gostaria de agendar um serviço para meu pet"

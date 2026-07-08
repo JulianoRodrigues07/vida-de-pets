@@ -17,7 +17,7 @@ export default function ContatoPage() {
           Fale com a <span className="text-pet-azul">gente</span>
         </h1>
         <p className="text-zinc-500 text-sm mb-8 text-center">
-          Estamos em Passo Fundo, RS. Chega junto!
+          Estamos em Passo Fundo, RS. Venha conhecer! 
         </p>
 
         <div className="flex flex-col gap-4">
