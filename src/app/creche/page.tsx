@@ -42,11 +42,11 @@ const incluso = [
   "Creche para todos os portes",
   "Frutas, água fresca e petisco naturais de lanche",
   "Atividades e brincadeiras em grupo",
-  "Espaço com grama sintético, brinquedos e piscina",
+  "Espaço com grama sintética, brinquedos e piscina",
   "Área externa de mais de 500m² com sombra arborizada",
   "Área coberta para dias de chuva",
-  "Monitoramento constante por câmeras",
-  "Atualização via WhatsApp pra você",
+  "Monitoramento constante",
+  "Atualização pelo WhatsApp e Instragram",
 ];
 
 export default function CrechePage() {

@@ -8,7 +8,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight,
   ChevronDown,
-  Home as HomeIcon,
   HouseHeart,
   Sparkles,
   Stethoscope,
@@ -93,21 +92,18 @@ function FaqItem({
 export default function ServicosPage() {
   const [] = useState<string | null>("Atendimento Veterinário");
 
-  const fotosEstetica = [
-    "/estetica1.jpg",
-    "/esteticav2.jpg",
-    "/esteticav3.jpg",
-    "/pet5.png",
+  const fotosCreche = [
+    "/creche1.jpg", "/creche3.jpeg", "/creche6.jpg", "/creche11.jpeg"
   ];
 
   const [fotoAtual, setFotoAtual] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setFotoAtual((prev) => (prev + 1) % fotosEstetica.length);
+      setFotoAtual((prev) => (prev + 1) % fotosCreche.length);
     }, 2500); // troca a cada 2.5s
     return () => clearInterval(interval);
-  }, [fotosEstetica.length]);
+  }, [fotosCreche.length]);
 
   const [perguntaAberta, setPerguntaAberta] = useState<number | null>(0);
 
@@ -214,39 +210,6 @@ export default function ServicosPage() {
                   ))}
                 </div>
               </div>
-
-              {/* Carrossel de fotos vertical, trocando automaticamente */}
-              <div className="hidden md:block relative w-full md:w-[38%] max-w-55 aspect-3/4 shrink-0 mr-4 rounded-2xl overflow-hidden shadow-lg bg-white/10">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={fotoAtual}
-                    initial={{ opacity: 0, scale: 1.03 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.98 }}
-                    transition={{ duration: 0.6, ease: "easeInOut" }}
-                    className="absolute inset-0"
-                  >
-                    <Image
-                      src={fotosEstetica[fotoAtual]}
-                      alt="Pet após banho na Vida de Pets"
-                      fill
-                      className="object-cover"
-                    />
-                  </motion.div>
-                </AnimatePresence>
-
-                {/* Indicador de posição */}
-                <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 z-10">
-                  {fotosEstetica.map((_, i) => (
-                    <span
-                      key={i}
-                      className={`h-1.5 rounded-full transition-all duration-300 ${
-                        i === fotoAtual ? "w-4 bg-white" : "w-1.5 bg-white/40"
-                      }`}
-                    />
-                  ))}
-                </div>
-              </div>
             </div>
           </motion.div>
 
@@ -290,7 +253,7 @@ export default function ServicosPage() {
               </h2>
 
               <p className="text-white/70 text-sm">
-                Protocolo completo de vacinas, exames laboratoriais, ultrassonografia e raio-x para seu pet sempre protegido.
+                Protocolo completo de vacinas, exames laboratoriais, ultrassonografia e raio-x para seu pet ficar sempre protegido.
               </p>
             </div>
           </motion.div>
@@ -413,9 +376,9 @@ export default function ServicosPage() {
                   <div className="flex flex-wrap gap-2">
                     {[
                       "Livre de gaiolas",
-                      "Monitoramento 24h",
+                      "Monitoramento veterinário 24h",
                       "Socialização",
-                      "Alimentação inclusa",
+                      "Frutas e Água fresca",
                     ].map((tag, index) => (
                       <motion.span
                         key={tag}
@@ -446,29 +409,38 @@ export default function ServicosPage() {
                   </div>
                 </div>
 
-                {/* Mini fotos */}
-                <div className="hidden md:grid grid-cols-2 gap-2 shrink-0">
-                  {["/creche1.jpg", "/creche3.jpeg", "/creche6.jpg", "/creche11.jpeg"].map(
-                    (src, i) => (
-                      <motion.div
-                        key={i}
-                        whileHover={{
-                          scale: 1.08,
-                          rotate: 2,
-                        }}
-                        transition={{ duration: 0.2 }}
-                        className="relative w-24 h-24 rounded-xl overflow-hidden"
-                      >
-                        <Image
-                          src={src}
-                          alt="Creche"
-                          fill
-                          className="object-cover opacity-80"
-                        />
-                      </motion.div>
-                    )
-                  )}
+                {/* Carrossel de fotos vertical, trocando automaticamente */}
+              <div className="hidden md:block relative w-full md:w-[38%] max-w-55 aspect-3/4 shrink-0 mr-4 rounded-2xl overflow-hidden shadow-lg bg-white/10">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={fotoAtual}
+                    initial={{ opacity: 0, scale: 1.03 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.98 }}
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src={fotosCreche[fotoAtual]}
+                      alt="Pet após banho na Vida de Pets"
+                      fill
+                      className="object-cover"
+                    />
+                  </motion.div>
+                </AnimatePresence>
+
+                {/* Indicador de posição */}
+                <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 z-10">
+                  {fotosCreche.map((_, i) => (
+                    <span
+                      key={i}
+                      className={`h-1.5 rounded-full transition-all duration-300 ${
+                        i === fotoAtual ? "w-4 bg-white" : "w-1.5 bg-white/40"
+                      }`}
+                    />
+                  ))}
                 </div>
+              </div>
               </div>
             </motion.div>
 

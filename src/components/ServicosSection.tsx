@@ -15,14 +15,14 @@ const servicos: Servico[] = [
   {
     titulo: "Creche e Hotel",
     descricao: "Um espaço acolhedor para o seu pet brincar, descansar e se sentir em casa.",
-    destaque: "Conforto e supervisão",
+    destaque: "Conforto e Diversão",
     Icon: HomeIcon,
     cor: "bg-gradient-to-br from-pet-azul to-sky-500",
   },
   {
     titulo: "Estética Animal",
     descricao: "Banho, tosa e cuidados especiais para deixar seu pet ainda mais bonito e confortável.",
-    destaque: "Beleza e bem-estar",
+    destaque: "Beleza e Saudável",
     Icon: Sparkles,
     cor: "bg-gradient-to-br from-pet-coral to-rose-400",
   },
@@ -74,7 +74,7 @@ export default function ServicosSection() {
         <div className="mb-12 rounded-4xl border border-zinc-100 bg-linear-to-r from-pet-azul/10 via-white to-pet-coral/10 p-8 text-center shadow-sm md:p-10">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-pet-marinho/70">Cuidado completo para pets</p>
           <h2 className="mt-3 text-3xl md:text-4xl font-extrabold text-pet-marinho">
-            Nossos <span className="text-pet-azul">serviços</span> pensados para o bem-estar do seu melhor amigo
+            Nossos <span className="text-pet-azul">serviços</span> são pensados para o bem-estar do seu melhor amigo
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base text-zinc-600 md:text-lg">
             Da saúde ao conforto, cada detalhe é pensado para oferecer praticidade, carinho e segurança no dia a dia.

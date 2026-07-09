@@ -79,10 +79,10 @@ export default function Footer() {
           © {new Date().getFullYear()} Vida de Pets. Todos os direitos reservados.
         </p>
         <Link
-          href="/admin"
-          className="text-zinc-600 hover:text-zinc-400 text-xs transition"
+          href="https://www.linkedin.com/in/juliano-rodrigues-b988041a2/"
+          className="text-zinc-400 text-xs transition"
         >
-          Acesso admin
+          Desenvolvido por Juliano Rodrigues
         </Link>
       </div>
     </footer>
