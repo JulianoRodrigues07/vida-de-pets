@@ -50,7 +50,7 @@ function ServiceCard({ titulo, descricao, destaque, Icon, cor, rotacao, index }:
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
       tabIndex={0}
-      className={`${cor} md:${rotacao} relative overflow-hidden rounded-[28px] p-6 text-left text-white shadow-[0_20px_50px_-20px_rgba(15,23,42,0.45)] hover:rotate-0 hover:scale-[1.02] transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pet-marinho focus-visible:ring-offset-2`}
+      className={`${cor} ${rotacao} relative overflow-hidden rounded-[28px] p-6 text-left text-white shadow-[0_20px_50px_-20px_rgba(15,23,42,0.45)] hover:rotate-0 hover:scale-[1.02] transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pet-marinho focus-visible:ring-offset-2`}
     >
       <div className="absolute inset-0 bg-white/10" />
       <div className="relative z-10">
@@ -86,7 +86,7 @@ export default function ServicosSection() {
             <ServiceCard
               key={servico.titulo}
               {...servico}
-              rotacao={i % 2 === 0 ? "rotate-1" : "-rotate-1"}
+              rotacao={i % 2 === 0 ? "md:rotate-1" : "md:-rotate-1"}
               index={i}
             />
           ))}
