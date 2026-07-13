@@ -100,7 +100,7 @@ export default function Avaliacoes() {
               key={av.nome}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
               className="relative bg-white rounded-2xl p-6 shadow-sm border border-zinc-100 flex flex-col gap-3 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group overflow-hidden"
             >
@@ -124,7 +124,6 @@ export default function Avaliacoes() {
                     <p className="font-bold text-pet-marinho text-sm leading-tight">
                       {av.nome}
                     </p>
-                    <p className="text-xs text-zinc-400"></p>
                   </div>
                 </div>
                 {/* Logo Google */}

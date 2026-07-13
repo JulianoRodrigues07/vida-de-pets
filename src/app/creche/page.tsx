@@ -171,7 +171,7 @@ export default function CrechePage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.5 }}
             >
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
@@ -193,7 +193,7 @@ export default function CrechePage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="relative aspect-square rounded-3xl overflow-hidden shadow-xl"
             >
@@ -224,7 +224,7 @@ export default function CrechePage() {
                 key={d.titulo}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
                 className="bg-white border border-zinc-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition"
               >

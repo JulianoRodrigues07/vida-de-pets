@@ -146,7 +146,7 @@ export default function ServicosPage() {
               },
             }}
             whileTap={{ scale: 0.99 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.2 }}
             className="md:col-span-2 bg-pet-azul rounded-3xl p-8 text-white relative overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer"
           >
@@ -226,7 +226,7 @@ export default function ServicosPage() {
                 },
               }}
               whileTap={{ scale: 0.98 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.2, delay: 0.1 }}
               className="bg-pet-coral rounded-3xl p-7 text-white relative overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer"
             >
@@ -271,7 +271,7 @@ export default function ServicosPage() {
               },
             }}
             whileTap={{ scale: 0.98 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.2 }}
             className="bg-pet-laranja rounded-3xl p-7 text-white relative overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer"
           >
@@ -340,7 +340,7 @@ export default function ServicosPage() {
                 },
               }}
               whileTap={{ scale: 0.99 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.2 }}
               className="md:col-span-2 bg-pet-marinho rounded-3xl p-8 text-white relative overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer"
             >
@@ -463,7 +463,7 @@ export default function ServicosPage() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.3 }}
           className="max-w-2xl mx-auto"
         >
