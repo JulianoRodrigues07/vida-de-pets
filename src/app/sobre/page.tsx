@@ -152,7 +152,7 @@ export default function SobrePage() {
                   Apaixonada por animais desde sempre, Pâmela fundou a Vida de Pets com um sonho: criar um espaço onde cada pet fosse tratado como parte da família.
                 </p>
                 <p>
-                  Médica veterinária dedicada, ela combina conhecimento técnico com um atendimento cheio de carinho e empatia — tanto com os pets quanto com seus tutores.
+                  Médica veterinária formada pela Faculdade IDEAU 2019/2 e Pós graduada em Oncologia de Pequenos Animais pelo Centro Universitário Avantis- UNIAVAN, 2023. Ela combina conhecimento técnico com um atendimento cheio de carinho e empatia, tanto com os pets quanto com seus tutores.
                 </p>
                 <p>
                   Sua missão é simples: fazer com que cada animal que passa pela Vida de Pets saia mais saudável, feliz e amado do que chegou.

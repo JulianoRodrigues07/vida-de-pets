@@ -26,22 +26,22 @@ const perguntasFrequentes = [
   {
     pergunta: "Quais formas de pagamento vocês aceitam?",
     resposta:
-      "Aceitamos Pix, cartão de débito, cartão de crédito e dinheiro. O pagamento é feito na retirada do seu pet.",
+      "Aceitamos Pix, cartão de débito, cartão de crédito e dinheiro. O pagamento é feito no check in do seu pet.",
   },
   {
     pergunta: "Posso cancelar ou remarcar meu agendamento?",
     resposta:
-      "Sim! Basta entrar em contato pelo WhatsApp com pelo menos 2 horas de antecedência para remarcar sem nenhum custo.",
+      "Sim! Basta entrar em contato pelo WhatsApp com pelo menos 24 horas de antecedência para remarcar sem nenhum custo. ",
   },
   {
     pergunta: "Meu pet precisa estar com as vacinas em dia?",
     resposta:
-      "Sim, para serviços de creche e hotel exigimos carteira de vacinação atualizada. Para banho e tosa, recomendamos, mas não é obrigatório.",
+      "Sim, para serviços de creche e hotel exigimos carteira de vacinação atualizada e controle de ectoparitas. Para banho e tosa, recomendamos, mas não é obrigatório.",
   },
   {
     pergunta: "Vocês atendem pets de todos os portes?",
     resposta:
-      "Atendemos cães e gatos de pequeno, médio e grande porte. Alguns serviços podem ter valores diferentes de acordo com o porte do animal.",
+      "Para serviços de creche e hospedagem atendemos somente cães de pequeno, médio e grande porte. Alguns serviços podem ter valores diferentes de acordo com o porte do animal, confira a disponibilidade das vagas.",
   },
 ];
 
