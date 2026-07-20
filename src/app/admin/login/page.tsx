@@ -8,14 +8,14 @@ import { Eye, EyeOff } from "lucide-react";
 export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
-    setError(false);
+    setError(null);
 
     const res = await fetch("/api/auth/nextauth", {
       method: "POST",
@@ -27,7 +27,8 @@ export default function LoginPage() {
       router.push("/admin");
       router.refresh();
     } else {
-      setError(true);
+      const data = await res.json().catch(() => null);
+      setError(data?.error || "Erro ao entrar. Tente novamente.");
       setLoading(false);
     }
   }
@@ -72,7 +73,7 @@ export default function LoginPage() {
 
           {error && (
             <p className="text-pet-coral text-sm font-semibold">
-              Senha incorreta. Tente novamente.
+              {error}
             </p>
           )}
 
