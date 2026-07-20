@@ -17,6 +17,33 @@ const horarios = [
 
 type Status = "idle" | "loading" | "success" | "error";
 
+const NUMERO_LOJA = "5554999508873";
+
+function formatarData(data: string) {
+  const [ano, mes, dia] = data.split("-");
+  return `${dia}/${mes}/${ano}`;
+}
+
+function gerarMensagemLoja(form: {
+  nome: string;
+  telefone: string;
+  nomePet: string;
+  servico: string;
+  data: string;
+  horario: string;
+}) {
+  return encodeURIComponent(
+    `Novo agendamento pelo site!\n\n` +
+    
+    `Nome: ${form.nome}\n` +
+    `Pet: ${form.nomePet}\n` +
+    `Telefone: ${form.telefone}\n` +
+    `Serviço: ${form.servico}\n` +
+    `Data: ${formatarData(form.data)}\n` +
+    `Horário: ${form.horario}`
+  );
+}
+
 export default function AgendarForm() {
     const [form, setForm] = useState({
     nome: "",
@@ -93,6 +120,10 @@ export default function AgendarForm() {
     e.preventDefault();
     setStatus("loading");
 
+    // Abre a aba já no clique do usuário (evita bloqueio de pop-up),
+    // e só definimos a URL dela depois que a resposta confirmar sucesso.
+    const abaWhats = window.open("", "_blank");
+
     try {
       const res = await fetch("/api/agendamentos", {
         method: "POST",
@@ -101,10 +132,17 @@ export default function AgendarForm() {
       });
 
       if (!res.ok) throw new Error();
+
+      if (abaWhats) {
+        const mensagem = gerarMensagemLoja(form);
+        abaWhats.location.href = `https://wa.me/${NUMERO_LOJA}?text=${mensagem}`;
+      }
+
       setStatus("success");
       setForm({ nome: "", telefone: "", nomePet: "", servico: "", data: "", horario: "" });
       setHorariosOcupados([]);
     } catch {
+      abaWhats?.close();
       setStatus("error");
     }
   }

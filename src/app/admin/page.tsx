@@ -23,23 +23,30 @@ const statusConfig = {
   cancelado: { label: "Cancelado", classe: "bg-red-100 text-red-700" },
 };
 
+function formatarData(data: string) {
+  const [ano, mes, dia] = data.split("-");
+  return `${dia}/${mes}/${ano}`;
+}
+
 function gerarMensagemConfirmacao(ag: Agendamento) {
   return encodeURIComponent(
-    `Olá ${ag.nome}! 🐾 O agendamento do ${ag.nomePet} na *Vida de Pets* foi *confirmado*!\n\n` +
-    `📋 Serviço: ${ag.servico}\n` +
-    `📅 Data: ${ag.data}\n` +
-    `🕐 Horário: ${ag.horario}\n\n` +
-    `Te esperamos! Qualquer dúvida é só chamar. 😊`
+    `Olá ${ag.nome}! O agendamento do ${ag.nomePet} na *Vida de Pets* foi *confirmado*!\n\n` +
+    
+    `Data: ${formatarData(ag.data)}\n` +
+    `Horário: ${ag.horario}\n\n` +
+    `Serviço: ${ag.servico}\n` +
+    
+    `Te esperamos! Qualquer dúvida é só chamar.`
   );
 }
 
 function gerarMensagemReagendamento(ag: Agendamento) {
   return encodeURIComponent(
-    `Olá ${ag.nome}! 🐾 Precisamos reagendar o atendimento do ${ag.nomePet} na *Vida de Pets*.\n\n` +
-    `📋 Serviço: ${ag.servico}\n` +
-    `📅 Data solicitada: ${ag.data}\n` +
-    `🕐 Horário solicitado: ${ag.horario}\n\n` +
-    `Por favor, entre em contato para escolhermos um novo horário. 😊`
+    `Olá ${ag.nome}!  Precisamos reagendar o atendimento do ${ag.nomePet} na *Vida de Pets*.\n\n` +
+    `Serviço: ${ag.servico}\n` +
+    `Data solicitada: ${formatarData(ag.data)}\n` +
+    `Horário solicitado: ${ag.horario}\n\n` +
+    `Por favor, entre em contato para escolhermos um novo horário.`
   );
 }
 
@@ -125,7 +132,7 @@ export default function AdminPage() {
                   <div className="flex flex-col gap-1 text-sm text-zinc-600 border-t border-zinc-100 pt-3">
                     <p>📋 <strong>Serviço:</strong> {ag.servico}</p>
                     <p>🐾 <strong>Pet:</strong> {ag.nomePet}</p>
-                    <p>📅 <strong>Data:</strong> {ag.data}</p>
+                    <p>📅 <strong>Data:</strong> {formatarData(ag.data)}</p>
                     <p>🕐 <strong>Horário:</strong> {ag.horario}</p>
                   </div>
                   {/* Ações */}
