@@ -42,13 +42,13 @@ const servicos: Servico[] = [
   },
 ];
 
-function ServiceCard({ titulo, descricao, destaque, Icon, cor, rotacao, index }: Servico & { rotacao: string; index: number }) {
+function ServiceCard({ titulo, descricao, destaque, Icon, cor, rotacao }: Servico & { rotacao: string; index: number }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.1 }}
-      transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.05 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
       tabIndex={0}
       className={`${cor} ${rotacao} relative overflow-hidden rounded-[28px] p-6 text-left text-white shadow-[0_20px_50px_-20px_rgba(15,23,42,0.45)] hover:rotate-0 hover:scale-[1.02] transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pet-marinho focus-visible:ring-offset-2`}
     >
